@@ -1,0 +1,545 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic')
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One')
+
+$gray-background: #313234
+$light-blue: #00C8E6
+$white: #fff
+$size-img-square-lg: 250px
+$size-img-square-sm: 150px
+
+/* GENERAL */
+* 
+    box-sizing: border-box
+
+body 
+    margin: 0
+    font-family: "Open Sans"
+
+.container 
+    max-width: 1200px
+    margin: 0 auto
+
+.row:before, .row:after 
+    content: ""
+    display: table
+    clear: both
+
+.clean-fix:before, .clean-fix:after 
+    content: ""
+    display: table
+    clear: both
+
+[class*="col-"] 
+    width: 100%
+    padding: 12px
+    float: left
+
+.col-1 
+    width: 8.33%
+.col-2 
+    width: 16.66%
+.col-3 
+    width: 25%
+.col-4 
+    width: 33.33%
+.col-5 
+    width: 41.66%
+.col-6 
+    width: 50%
+.col-7 
+    width: 58.33%
+.col-8 
+    width: 66.66%
+.col-9 
+    width: 75%
+.col-10 
+    width: 83.33%
+.col-11 
+    width: 91.66%
+.col-12 
+    width: 100%
+
+.col-offset-0 
+    margin-left: 0
+.col-offset-1 
+    margin-left: 8.33%
+.col-offset-2 
+    margin-left: 16.66%
+.col-offset-3 
+    margin-left: 25%
+.col-offset-4 
+    margin-left: 33.33%
+.col-offset-5 
+    margin-left: 41.66%
+.col-offset-6 
+    margin-left: 50%
+.col-offset-7 
+    margin-left: 58.33%
+.col-offset-8 
+    margin-left: 66.66%
+.col-offset-9 
+    margin-left: 75%
+.col-offset-10 
+    margin-left: 83.33%
+.col-offset-11 
+    margin-left: 91.66%
+
+.text-center 
+    text-align: center
+
+.text-justify 
+    text-align: justify
+
+.text-bold 
+    font-weight: 700
+
+section 
+    .container 
+        margin: 50px auto
+
+h2 
+    font-size: 42px
+    text-transform: uppercase
+    letter-spacing: -2px
+    font-weight: 700
+
+/* HEADER */
+header 
+    background: $gray-background
+    height: 50px
+    
+    nav
+        &:after
+            content: ""
+            display: table
+            clear: both
+        
+        img 
+            padding: 10px 0
+            
+        ul 
+            list-style-type: none
+            padding: 0
+            margin: 0
+            float: right
+            
+            li 
+                height: 50px
+                width: 100px
+                display: inline
+                &:last-child a
+                    margin-right: 0
+                a 
+                    display: inline-block
+                    margin-right: -4px
+                    line-height: 50px
+                    padding: 0 20px
+                    text-decoration: none
+                    color: $white
+                    text-transform: uppercase
+                    letter-spacing: 1px
+                    &:hover 
+                        color: $light-blue
+                        transition: 0.15s
+                        transform: scale(1.2)
+
+/* HERO */
+.hero 
+    background: url('http://postrowinski2.students.alx.pl/project1/hero-bg.jpg') no-repeat center center
+    background-size: cover
+    height: 500px
+
+    .slogan 
+        margin-top: 150px
+        float: right
+        max-width: 800px
+        background: rgba(255,255,255,0.5)
+        
+    h1 
+        margin: 0 150px 0 0
+        padding: 35px 25px
+        text-transform: uppercase
+        font-size: 40px
+        font-weight: 300
+        line-height: 0.9
+        letter-spacing: -1px
+        
+        p
+            font-weight: 700
+            margin: 0
+   
+/* PROFITS */
+.profits 
+    
+    i 
+        font-size: 60px
+        color: $white
+        padding: 30px
+        background: $gray-background
+        border-radius: 15px
+        transition: 0.3s
+        &:hover
+            background: $light-blue
+            &~h3
+                color: $light-blue
+    h3 
+        font-size: 26px
+        text-transform: uppercase
+        transition: 0.3s
+
+/* GALLERY */
+.gallery 
+    
+    [class*="col-"] 
+        padding: 0
+        position: relative
+        margin-bottom: -1px
+        &:before 
+            content: ""
+            position: absolute
+            height: 100%
+            width: 100%
+            background-position: 1% 99%
+            background-size: 300%
+            background-image: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.5) 50%)
+            transition: 1s
+        &:hover
+            .layer
+                a
+                    display: inline
+                    color: #000  
+            &:before 
+                background-position: 99% 1%
+
+    img 
+        width: 100%
+        display: block
+
+    .layer 
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 150px
+        left: 0
+        right: 0
+        margin: auto
+        color: transparent
+        
+        a 
+            display: none
+            padding: 3px 5px 5px
+            border-radius: 4px
+            background: $white
+            &:nth-of-type(2) 
+                float: right
+                margin-top: -4px
+
+/* TEAM */
+
+.team 
+    
+    .team-image 
+        border-radius: 50%
+        max-height: $size-img-square-lg
+        max-width: $size-img-square-lg
+        position: relative
+        margin: auto
+        &:before
+            content: ""
+            position: absolute
+            width: $size-img-square-lg
+            height: $size-img-square-lg
+            background: transparent
+            border-radius: 50%
+            transition: 0.7s
+        &:hover
+            p
+                display: block
+                cursor: default
+            &:before
+                background: rgba(0,0,0,0.5)
+        
+        img 
+            border-radius: 50%
+            max-height: $size-img-square-lg
+            max-width: $size-img-square-lg
+            
+        p 
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            right: 0
+            margin: auto
+            color: $white
+            display: none
+    p 
+        font-size: 24px
+        font-weight: 700
+
+/* TITLE */
+
+.title 
+    color: $white
+    background: $gray-background
+    overflow: hidden
+    max-height: 300px
+    
+    .container 
+        margin-top: 15px
+        
+    img 
+        width: 100%
+        
+    h2 
+        margin-bottom: 0
+        padding-left: 12px
+
+/* NUMBERS */
+
+.numbers 
+    
+    h2 
+        font-family: 'Rubik Mono One', sans-serif
+        margin-bottom: 0
+        width: 120px
+        margin: auto
+        
+        span 
+            font-size: 34px
+
+        .numbers-stick-top  
+            position: relative
+            bottom: 6px
+
+    p 
+        margin: 0
+        text-transform: uppercase
+        font-weight: 700
+        color: $light-blue
+
+/* FOOTER */
+footer 
+    background: #313234
+    color: $white
+    
+    .fa-youtube:hover 
+        color: #bb0000
+    .fa-google-plus:hover 
+        color: #dd4b39
+    .fa-facebook:hover 
+        color: #3b5998
+    .fa-linkedin:hover 
+        color: #007bb5
+    .fa-twitter:hover 
+        color: #55acee
+    .fa-instagram:hover 
+        color: #e95950
+        
+    a 
+        color: $white
+        
+        .fa 
+            font-size: 21px
+            text-align: center
+            padding: 7px
+            min-width: 40px
+            margin-right: 5px
+            background: $light-blue
+            transition: 0.5s
+        
+    [class*="col-"] 
+        p 
+            font-weight: 300
+            
+    h2 
+        font-size: 24px
+        letter-spacing: -1px
+        position: relative
+        display: inline-block
+        &:before, &:after 
+            content: ""
+            position: absolute
+            border-bottom: 3px solid $white
+            width: 80px
+            top: 50%
+        &:before 
+            right: calc(100% + 15px)
+            display: none
+        &:after 
+            left: calc(100% + 15px)
+           
+    .container > 
+        .row > 
+            [class*="col-"]
+                &:nth-of-type(2)
+                    .row 
+                        [class*="col-"]
+                            &:first-of-type 
+                                p 
+                                    margin-left: -8px
+                                    font-weight: 700
+                    h2 
+                        margin-bottom: 10px
+                                   
+    > p 
+        background: #101012
+        padding: 15px
+        margin: 0
+    
+/* MEDIA */
+@media (max-width: 767px) 
+    /* For tablets: */
+    .col-s-1 
+        width: 8.33%
+    .col-s-2 
+        width: 16.66%
+    .col-s-3 
+        width: 25%
+    .col-s-4 
+        width: 33.33%
+    .col-s-5 
+        width: 41.66%
+    .col-s-6 
+        width: 50%
+    .col-s-7 
+        width: 58.33%
+    .col-s-8 
+        width: 66.66%
+    .col-s-9 
+        width: 75%
+    .col-s-10 
+        width: 83.33%
+    .col-s-11 
+        width: 91.66%
+    .col-s-12 
+        width: 100%
+    
+    section 
+        
+        > .container 
+            margin: 20px auto
+    
+    header 
+        height: inherit
+        
+        > nav 
+            
+            img 
+                display: block
+                margin: auto
+                
+            > ul 
+                float: none
+                
+                > li 
+                    text-align: center
+                    
+                    > a 
+                        display: block
+                        margin-right: 0
+
+    .hero 
+        
+        .slogan 
+            position: relative
+            margin: 0 auto
+            top: 50%
+            transform: translateY(-50%)
+            text-align: center
+            width: 100%
+            
+        h1 
+            margin: 0
+            padding: 20px 10px  
+            font-size: 30px
+ 
+    .profits 
+        
+        h3 
+            font-size: 22px
+    
+    .header-before-gallery 
+        
+        h2 
+            font-size: 24px
+    
+    .title 
+        max-height: inherit
+    
+        h2
+            font-size: 24px
+            letter-spacing: 0
+            
+        .container 
+            > .row 
+                > [class*="col-"]
+                    &:first-of-type 
+                        display: none
+      
+        .row 
+            .row 
+                [class*="col"] 
+                    width: 100%
+     
+    footer 
+        text-align: center
+    
+        h2
+            &:before
+                display: block
+            
+        .container
+            > .row
+                > [class*="col"]
+                    &:nth-of-type(2) 
+                        .row 
+                            [class*="col"]
+                                &:last-of-type 
+                                    text-align: left
+    
+@media (min-width: 768px) 
+    /* For desktop: */
+    .col-m-1 
+        width: 8.33%
+    .col-m-2 
+        width: 16.66%
+    .col-m-3 
+        width: 25%
+    .col-m-4 
+        width: 33.33%
+    .col-m-5 
+        width: 41.66%
+    .col-m-6 
+        width: 50%
+    .col-m-7 
+        width: 58.33%
+    .col-m-8 
+        width: 66.66%
+    .col-m-9 
+        width: 75%
+    .col-m-10 
+        width: 83.33%
+    .col-m-11 
+        width: 91.66%
+    .col-m-12 
+        width: 100%
+
+
+@media (max-width: 1200px) 
+    .team 
+        
+        p
+            font-size: 18px
+            font-weight: 700
+            
+        .team-image 
+            max-height: $size-img-square-sm
+            max-width: $size-img-square-sm
+            &:before
+                width: $size-img-square-sm
+                height: $size-img-square-sm
+            
+            img
+                max-height: $size-img-square-sm
+                max-width: $size-img-square-sm    
